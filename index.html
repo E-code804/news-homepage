@@ -1,133 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.svg" />
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>News Homepage</title>
-  </head>
-  <body class="flex align-center justify-center">
-    <div id="main-div" class="space-y-10">
-      <!-- Desktop Navbar -->
-      <nav class="flex align-center justify-between">
-        <img src="./assets/logo.svg" alt="News Homepage Logo" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.svg" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="./styles.css" /> -->
+  <link rel="stylesheet" href="./styles.min.css" />
 
-        <div id="hamburger" class="cursor-pointer lg:hidden">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
+  <title>News Homepage</title>
+</head>
 
-        <ul id="nav-links" class="hidden space-x-10 lg:flex">
-          <li>Home</li>
-          <li>New</li>
-          <li>Popular</li>
-          <li>Trending</li>
-          <li>Categories</li>
-        </ul>
-      </nav>
+<body class="flex align-center justify-center">
+  <div id="main-div" class="space-y-16">
+    <!-- Desktop Navbar -->
+    <nav class="flex align-center justify-between">
+      <img src="./assets/logo.svg" alt="News Homepage Logo" class="cursor-pointer" />
 
-      <!-- Mobile Menu -->
-      <ul
-        id="mobile-nav-links"
-        class="flex flex-col w-64 h-full space-y-5 p-5 fixed top-0 right-0 bg-white shadow-lg transition-transform transform translate-x-full lg:hidden"
-      >
-        <li class="self-end my-10">
-          <div id="close">
-            <div id="hamburger" class="cursor-pointer active lg:hidden">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
-        </li>
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
+      <div id="close" class="hamburger cursor-pointer lg:hidden">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <ul id="nav-links" class="hidden space-x-10 lg:flex">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#">New</a></li>
+        <li><a class="nav-link" href="#">Popular</a></li>
+        <li><a class="nav-link" href="#">Trending</a></li>
+        <li><a class="nav-link" href="#">Categories</a></li>
       </ul>
 
-      <!-- Hero Section -->
-      <div id="hero-div" class="flex flex-col space-y-10 lg:flex-row lg:space-y-0 lg:space-x-5">
-        <div class="space-y-5">
-          <img src="./assets/image-web-3-desktop.jpg" alt="web 3" id="hero-img1" />
-          <img src="./assets/image-web-3-mobile.jpg" alt="web 3" id="hero-img2" class="lg:hidden" />
+      <!-- Mobile Menu -->
+      <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-8"></div>
+      <ul id="mobile-nav-links"
+        class="flex flex-col h-full space-y-5 p-5 fixed top-0 right-0 bg-white shadow-xl lg:hidden">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#">New</a></li>
+        <li><a class="nav-link" href="#">Popular</a></li>
+        <li><a class="nav-link" href="#">Trending</a></li>
+        <li><a class="nav-link" href="#">Categories</a></li>
+      </ul>
+    </nav>
 
-          <div class="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5">
-            <h1 class="hero-title">The Bright Future of Web 3.0?</h1>
+    <!-- Hero Section -->
+    <main id="hero" class="flex flex-col space-y-10 lg:flex-row lg:space-y-0 lg:space-x-5">
+      <div class="space-y-5">
+        <img src="./assets/image-web-3-desktop.jpg" alt="web 3" id="hero-img1" />
+        <img src="./assets/image-web-3-mobile.jpg" alt="web 3" id="hero-img2" />
 
-            <div class="flex flex-col justify-between">
-              <p>
-                We dive into the next evolution of the web that claims to put the power of the platforms back into the
-                hands of the people. But is it really fulfilling its promise?
-              </p>
+        <div class="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5">
+          <h1 class="hero-title">The Bright Future of Web 3.0?</h1>
 
-              <button class="read-btn mt-2 w-1/2">READ MORE</button>
-            </div>
-          </div>
-        </div>
+          <div class="hero-desc flex flex-col">
+            <p>
+              We dive into the next evolution of the web that claims to put the power of the platforms back into the
+              hands of the people. But is it really fulfilling its promise?
+            </p>
 
-        <div class="news-section flex flex-col h-max space-y-4 px-5 py-5 justify-between lg:py-5">
-          <h1>New</h1>
-
-          <div>
-            <h3 class="mb-2">Hydrogen VS Electric Cars</h3>
-            <p>Will hydrogen-fueled cars ever catch EVs?</p>
-          </div>
-          <hr />
-
-          <div>
-            <h3 class="mb-2">The Downsides of AI Artistry</h3>
-            <p>What are the possible adverse efect of on-demand AI image generation?</p>
-          </div>
-          <hr />
-
-          <div>
-            <h3 class="mb-2">Is VC funding Drying Up?</h3>
-            <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            <button class="read-btn mt-auto w-1/2">READ MORE</button>
           </div>
         </div>
       </div>
 
-      <!-- Footer/Bottom area -->
-      <div class="flex flex-col space-y-5 lg:flex-row lg:space-x-5 lg:space-y-0">
-        <div class="flex flex-1 w-full space-x-5 lg:w-1/3 lg:flex-0">
-          <img src="./assets/image-retro-pcs.jpg" alt="retro pcs" />
+      <div class="news-section flex flex-col h-max space-y-4 px-5 py-5 justify-between lg:py-5">
+        <h1>New</h1>
 
-          <div class="article-styles flex flex-col justify-between">
-            <h1>01</h1>
-            <h3>Reviving Retro PCs</h3>
-            <p>What will happen when old PCs are given modern upgrades?</p>
-          </div>
+        <div>
+          <h3 class="mb-2">Hydrogen VS Electric Cars</h3>
+          <p>Will hydrogen-fueled cars ever catch EVs?</p>
         </div>
+        <hr />
 
-        <div class="flex flex-1 w-full space-x-5 lg:w-1/3 lg:flex-0">
-          <img src="./assets/image-top-laptops.jpg" alt="top laptops" />
-
-          <div class="article-styles flex flex-col">
-            <h1>02</h1>
-            <h3>Top 10 Laptops of 2022</h3>
-            <p>Our best picks for various needs and budgets.</p>
-          </div>
+        <div>
+          <h3 class="mb-2">The Downsides of AI Artistry</h3>
+          <p>What are the possible adverse efect of on-demand AI image generation?</p>
         </div>
+        <hr />
 
-        <div class="flex flex-1 w-full space-x-5 lg:w-1/3 lg:flex-0">
-          <img src="./assets/image-gaming-growth.jpg" alt="retro pcs" />
-
-          <div class="article-styles flex flex-col justify-between">
-            <h1>03</h1>
-            <h3>The Growth of Gaming</h3>
-            <p>How the pandemic has sparked fresh opportunites.</p>
-          </div>
+        <div>
+          <h3 class="mb-2">Is VC funding Drying Up?</h3>
+          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
         </div>
       </div>
-    </div>
+    </main>
 
-    <script src="index.js"></script>
-  </body>
+    <!-- Footer/Bottom area -->
+    <footer class="flex gap-10 flex-col lg:flex-row">
+      <article class="flex-article">
+        <div>
+          <img src="./assets/image-retro-pcs.jpg" alt="Retro PC and old devices" class="article-img" />
+        </div>
+        <div class="flex flex-col justify-between">
+          <h1>01</h1>
+          <h3>Reviving Retro PCs</h3>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+      <article class="flex-article">
+        <div>
+          <img src="./assets/image-top-laptops.jpg" alt="Best Laptops" class="article-img" />
+        </div>
+        <div class="flex flex-col justify-between">
+          <h1>02</h1>
+          <h3>Top 10 Laptops of 2022</h3>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+      <article class="flex-article">
+        <div>
+          <img src="./assets/image-gaming-growth.jpg" alt="Hand Throwing PS4 Controller" class="article-img" />
+        </div>
+        <div class="flex flex-col justify-between">
+          <h1>03</h1>
+          <h3>The Growth of Gaming</h3>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </footer>
+  </div>
+
+  <!-- <script src="index.js"></script> -->
+  <script src="./index.min.js"></script>
+</body>
+
 </html>
